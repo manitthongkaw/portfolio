@@ -1,7 +1,5 @@
 @import "tailwindcss";
 
-@layer theme, base, components, utilities;
-
 @theme {
   --font-googlesans:"Google Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --breakpoint-2xs:20rem; /* 320px */
@@ -84,72 +82,45 @@
   *, :before, :after {@apply p-0 m-0 box-border border-neutral-disable outline-neutral-soft;}
   input, textarea, select, button, a {@apply focus:outline-none transition-all;}
   body {@apply font-googlesans font-normal text-base text-content-base fill-content-base bg-neutral-100;}
-      .h0 {@apply text-4xl  text-content-hover;}
-  h1, .h1 {@apply text-2xl leading-10 text-primary-hover;}
-  h2, .h2 {@apply text-xl   text-content-hover;}
-  h3, .h3 {@apply text-lg   text-content-hover;}
-  h4, .h4 {@apply text-base text-content-hover;}
-  h5, .h5 {@apply text-sm   text-content-hover;}
-  h6, .h6 {@apply text-xs   text-content-hover;}
+      .h0 {@apply text-4xl  font-medium text-content-hover;}
+  h1, .h1 {@apply text-2xl  font-medium text-primary-hover leading-10;}
+  h2, .h2 {@apply text-xl   font-medium text-content-hover;}
+  h3, .h3 {@apply text-lg   font-medium text-content-hover;}
+  h4, .h4 {@apply text-base font-medium text-content-hover;}
+  h5, .h5 {@apply text-sm   font-medium text-content-hover;}
+  h6, .h6 {@apply text-xs   font-medium text-content-hover;}
   hr {@apply w-full border-neutral-disable;}
   button, [role=button] {@apply cursor-pointer;}
   img {@apply w-fit rounded-lg transition-all;}
-  table {@apply w-full;}
-  table tr {@apply border-t border-neutral-light;}
-  table tbody tr {@apply hover:bg-neutral-lighter transition-all;}
-  table:has(thead) tbody tr:first-child {@apply border-neutral-disable;}
-  table :last-child tr:last-child {@apply border-b;}
-  table :is(th, td) {@apply align-top leading-7 px-2 xl:px-5 py-2;}
-  table th {@apply whitespace-nowrap font-normal text-left text-content-hover;}
-  table :is(th, td):first-child {@apply pl-0;}
-  table :is(th, td):last-child  {@apply pr-0;}
-  table :is(a, button) {@apply hover:text-primary-hover;}
-  table td:last-child span.button {@apply w-full;}
-  .table-container {@apply w-full overflow-auto;}
-  .table-container table :is(th, td) {@apply h-14.25 whitespace-nowrap align-middle;}
-  .table-responsive tr {@apply border-none hover:bg-transparent;}
-  .table-responsive :is(th, td) {@apply max-2xs:block max-2xs:leading-6 max-2xs:p-0 py-0;}
-  .table-responsive tbody tr:not(:last-child) :is(th, td):last-child {@apply max-2xs:pb-2;}
-  .table-responsive th {@apply whitespace-nowrap;}
 
   form {@apply flex flex-row flex-wrap justify-between items-center gap-5 w-full;}
-  .heading-row {@apply flex flex-col xs:flex-row flex-wrap justify-between xs:items-center gap-5;}
-  .input-row {@apply flex flex-col sm:flex-row gap-5 w-full;}
+  .input-row {@apply flex flex-col lg:flex-row gap-5 w-full;}
   .input-col {@apply flex flex-col gap-5 w-full;}
   .input-group {@apply relative flex flex-col gap-2 w-full;}
-  .button-row {@apply flex flex-row flex-wrap-reverse justify-end items-center grow gap-5 w-full xs:w-fit;}
+  .button-row {@apply flex flex-row flex-wrap justify-end items-center grow gap-5 w-full xs:w-fit;}
   .button-row button {@apply grow xs:grow-0;}
-  fieldset {@apply flex flex-col gap-5 w-full;}
-  legend {@apply text-content-hover pb-6 sm:pb-4;}
-  label {@apply flex items-center gap-2 w-fit text-sm hover:text-primary-hover;}
-  .input-group:has(:is(input, textarea, select):hover) label {@apply text-primary-hover;}
-  .input-group label:not(.label-normal) {@apply max-sm:absolute max-sm:-translate-y-1/2 max-sm:left-2.75 max-sm:px-1.5 max-sm:rounded-md max-sm:bg-white;}
-  input, textarea, select {@apply w-full leading-5.5 placeholder:text-content-disable disabled:text-content-disable px-4 py-2 border border-neutral-disable hover:border-neutral-base disabled:border-neutral-disable rounded-lg bg-white;}
-  input[type="password"] {@apply text-xl tracking-[0.2em];}       
-  input[type="range"] {@apply cursor-pointer appearance-none px-0 py-4.75 border-none focus:outline-none bg-transparent;}
-  input[type="range"]::-webkit-slider-runnable-track {@apply h-0.5 rounded-full bg-neutral-disable;}
-  input[type="range"]::-webkit-slider-thumb {@apply appearance-none w-6 h-2 rounded-full -mt-0.75 bg-primary-base;}
-  input[type="range"]::-moz-range-track {@apply h-0.5 rounded-full bg-neutral-disable;}
-  input[type="range"]::-moz-range-thumb {@apply w-6 h-2 border-none rounded-full bg-primary-base;}
-  input[type="range"]:focus::-webkit-slider-thumb {@apply outline-2 outline-neutral-base outline-offset-4;}
-  input[type="range"]:focus::-moz-range-thumb {@apply outline-2 outline-neutral-base outline-offset-4;}
-  input[type="time"] {@apply h-10;}
+  label {@apply w-fit text-sm font-medium text-content-soft hover:text-primary-hover transition-all;}
+  .input-group label {@apply absolute top-2 left-4;}
+  .input-group:has(:is(input, textarea):hover) label {@apply text-primary-hover;}
+  input, textarea {@apply w-full leading-5.5 placeholder:text-content-disable disabled:text-content-disable
+                          px-4 pt-7 pb-2 border border-neutral-disable hover:border-primary-disable disabled:border-neutral-disable rounded-lg bg-white;}
   textarea {@apply field-sizing-content min-h-30 max-h-[80dvh];}
-  select {@apply cursor-pointer w-auto px-3! py-1.5;}
-  select option {@apply text-content-base bg-white;}
-  select option[disabled] {@apply text-content-disable bg-white;}
 
-  details {@apply overflow-hidden rounded-lg bg-neutral-lighter;}
+  details {@apply border border-neutral-disable rounded-2xl bg-white hover:shadow-2xl/5 hover:scale-105 transition-all;}
   details * {@apply transition-all;}
   details + details {@apply mt-4;}
-  details summary {@apply cursor-pointer flex justify-between items-center text-content-base hover:text-content-hover px-5 py-4 border border-neutral-lighter hover:border-neutral-base rounded-lg bg-neutral-lighter;}
-  details[open] summary {@apply text-white border-content-base hover:border-primary-hover bg-content-base hover:bg-primary-hover;}
-  details summary + * {@apply pt-4;}
-  details > *:not(summary) {@apply px-5;}
-  details > *:not(summary):last-child {@apply pb-4;}
+  details summary {@apply cursor-pointer relative flex justify-between text-content-base hover:text-content-hover
+                          p-4 sm:p-8 border border-neutral-disable hover:border-primary-disable rounded-2xl -m-px transition-all;}
+  details[open] summary {@apply text-primary-base hover:text-primary-hover;}
+  details summary + * {@apply pt-4 sm:pt-8 transition-all;}
+  details > *:not(summary) {@apply px-4 sm:px-8;}
+  details > *:not(summary):last-child {@apply pb-4 sm:pb-8;}
+  details ul {@apply list-disc text-sm;}
+  details li {@apply ml-4.25;}
   details summary::marker {@apply hidden;}
-  details summary:after {@apply content-['add'] size-6;}
+  details summary:after {@apply content-['add'] text-content-soft transition-all;}
   details[open] summary:after {@apply content-['close'];}
+  details summary:hover:after {@apply text-primary-hover;}
 }
 
 @layer components {
@@ -161,21 +132,9 @@
     font-feature-settings:"liga"; -webkit-font-smoothing:antialiased;
   }
   /* Google Icon */
-  .icon-material.wght-700           {font-variation-settings:'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.wght-600           {font-variation-settings:'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.wght-500           {font-variation-settings:'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.wght-400           {font-variation-settings:'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;}
   .icon-material ,
   .icon-material.icon-outline       {font-variation-settings:'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.wght-200           {font-variation-settings:'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.wght-100           {font-variation-settings:'FILL' 0, 'wght' 100, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.icon-fill.wght-700 {font-variation-settings:'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.icon-fill.wght-600 {font-variation-settings:'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.icon-fill.wght-500 {font-variation-settings:'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.icon-fill.wght-400 {font-variation-settings:'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;}
   .icon-material.icon-fill          {font-variation-settings:'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.icon-fill.wght-200 {font-variation-settings:'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24;}
-  .icon-material.icon-fill.wght-100 {font-variation-settings:'FILL' 1, 'wght' 100, 'GRAD' 0, 'opsz' 24;}
 
   .button           {@apply relative hover:z-10 inline-flex justify-center items-center gap-2 min-h-10 leading-10 text-white px-4 border-0 rounded-lg transition-all;}
   .button-icon      {@apply justify-center size-10 p-0;}
@@ -230,20 +189,17 @@
   .button-ghost.button-success , .badge-ghost.badge-success {@apply text-success-base;}
   .button-ghost.button-neutral , .badge-ghost.badge-neutral {@apply text-neutral-base;}
   .button-ghost.button-content , .badge-ghost.badge-content {@apply text-content-base;}
-  .button-group:has(.button) {@apply flex;}
-  .button-group > .button:not(:first-child,:last-child) ,
-  .button-group :not(:first-child,:last-child) .button {@apply rounded-none;}
-  .button-group > .button:first-child  ,
-  .button-group :first-child .button {@apply rounded-r-none;}
-  .button-group > .button:last-child   ,
-  .button-group :last-child .button  {@apply rounded-l-none;}
-  .button-group > .button:is(.button-outline):not(:first-child) {@apply -ml-px;}
-
-  .pagination {@apply flex flex-wrap items-center gap-2 mt-5;}
 }
 
 @utility bg-gradient {@apply bg-linear-135 from-pink-500 via-purple-500 to-indigo-600 transition-all;}
+@utility bg-gradient-primary {@apply bg-linear-135 from-pink-50 via-purple-50 to-indigo-100 transition-all;}
+/*@utility bg-gradient-secondary {@apply bg-linear-135 from-pink-50/20 via-purple-50 to-white transition-all
+                                hover:bg-linear-165;}
+@utility bg-gradient-tertiary {}*/
 @utility text-gradient {@apply bg-linear-135 from-pink-500 via-purple-500 to-indigo-600 bg-clip-text text-transparent transition-all;}
+@utility frame {@apply flex flex-col items-start gap-4 p-4 sm:p-8 border border-neutral-disable hover:border-primary-disable rounded-2xl bg-white hover:shadow-2xl/5 hover:scale-105 transition-all;}
+@utility shadow-2xl-reverse {@apply shadow-[0_-25px_50px_-12px_rgba(0,0,0,0.25)]/5  transition-all;}
+/*@utility shadow-hsl {@apply shadow-[hsl(320,100%,50%,0.5)];}*/
 
 * {@apply selection:text-white selection:bg-primary-base;}
     .h0 ,
@@ -257,79 +213,116 @@ a, button {@apply selection:text-white selection:bg-warning-disable;}
 li::marker {@apply text-primary-base;}
 li:hover::marker {@apply text-pink-400;}
 
-#root {@apply px-4 sm:px-8 pt-32;}
-#root > :is(header, main, footer) {@apply w-7xl max-w-full mx-auto;}
+main > section {@apply pb-8 bg-white;}
+main > section + section {@apply rounded-t-4xl inset-shadow-xs inset-shadow-pink-100 shadow-2xl-reverse -mt-8;}
 
-header {@apply fixed z-99 top-10 left-1/2 -translate-x-1/2 flex justify-between content-center items-center w-full p-2 border border-neutral-disable hover:border-primary-disable rounded-full bg-white/5 hover:bg-primary-lighter/30 backdrop-blur-sm transition-all;}
-header nav a {@apply block leading-10 max-[600px]:text-center hover:text-white px-4 rounded-full hover:bg-primary-hover transition-all;}
+.container {@apply flex flex-col justify-center items-center gap-4 sm:gap-8 w-7xl max-w-full px-4 sm:px-8 py-16 mx-auto;}
+.container > .heading {@apply w-full text-center max-sm:pb-2;}
+.container > .heading h2 {@apply w-fit text-3xl 2xs:text-4xl text-gradient pb-1 mx-auto;}
+.container > .heading p {@apply text-lg text-balance;}
+header {@apply fixed z-99 top-0 left-1/2 -translate-x-1/2 w-full px-1.5 sm:px-5.5 pt-8;}
+header .container {@apply flex flex-row justify-between content-center items-center gap-2 w-309
+                          p-2.25 border border-neutral-disable hover:border-primary-disable rounded-2xl
+                          bg-white/20 hover:bg-primary-lighter/30
+                          inset-shadow-xs inset-shadow-pink-100 shadow-2xl/5 hover:shadow-2xl/10 backdrop-blur-sm transition-all;}
+header .container:has(nav.active) {@apply max-sm:rounded-b-none max-sm:bg-gradient-primary;}
+header nav:not(.active) {@apply overflow-hidden max-sm:h-0;}
+header nav {@apply max-sm:absolute top-full left-0 max-sm:w-[calc(100%+2px)] transition-all;}
+header nav.active {@apply max-sm:p-2.25 max-sm:border max-sm:border-t-0 max-sm:border-neutral-disable max-sm:hover:border-primary-disable max-sm:rounded-b-2xl
+                          max-sm:bg-white max-sm:-mx-px max-sm:mt-px max-sm:shadow-2xl/5;}
+header nav ul {@apply flex flex-col sm:flex-row;}
+header .nav-brand ,
+header nav a ,
+header button {@apply block leading-10 font-medium text-center text-content-hover hover:text-white
+                      text-shadow-lg/20 text-shadow-white hover:text-shadow-none
+                      px-4 rounded-lg hover:bg-primary-hover transition-all;}
+header .nav-toggle {@apply sm:hidden w-10 p-0;}
+header .nav-toggle .icon-material {@apply align-middle;}
 
-footer {@apply text-xs text-balance text-center text-content-soft/60 pb-8;}
-footer span {@apply text-2xl align-bottom leading-2;}
+footer {@apply rounded-t-4xl inset-shadow-xs inset-shadow-pink-100 bg-white shadow-2xl-reverse -mt-8;}
+footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400px]:justify-between gap-2 py-4;}
+.follow-me {@apply flex gap-3 text-sm font-medium text-primary-base;}
+.follow-me a svg {@apply size-5 fill-content-soft hover:fill-content-hover transition-all;}
+.follow-me [data-tooltip="LinkedIn"]:hover svg {@apply fill-[#0077b5];}
+.follow-me [data-tooltip="GitHub"]:hover svg {@apply fill-black;}
+.follow-me a .text {@apply hidden;}
+.copyright {@apply text-xs text-balance text-center text-content-soft/60;}
+.copyright span {@apply text-2xl align-bottom leading-2;}
 
-main > section {@apply flex flex-wrap justify-center /*content-center items-center*/ gap-4 sm:gap-8 /*w-7xl max-w-full*/ py-8  /*border border-neutral-disable rounded-2xl*/ /*mx-auto*/;}
-main > section + section {@apply pt-8 sm:pt-16;}
+.tooltip {@apply relative block;}
+.tooltip:after {@apply content-[attr(data-tooltip)] whitespace-nowrap absolute left-1/2 -translate-x-1/2 bottom-full text-xs text-balance text-white px-2 py-1 rounded bg-neutral-hover mb-2 opacity-0 transition-all pointer-events-none;}
+.tooltip:hover:after {@apply opacity-100;}
 
-.heading {@apply w-full text-center max-sm:pb-2;}
-.heading h2 {@apply w-fit text-4xl text-gradient pb-1 mx-auto;}
-.heading p {@apply text-lg text-balance;}
-
-@utility frame {@apply flex flex-col items-start gap-4 p-4 sm:p-8 border border-neutral-disable hover:border-primary-disable rounded-2xl bg-white hover:shadow-2xl/5 hover:scale-105 transition-all;}
-.tooltip {@apply relative;}
-.tooltip:after {@apply content-[attr(data-tooltip)] whitespace-nowrap absolute left-1/2 -translate-x-1/2 bottom-full text-xs text-white px-2 py-1 rounded bg-neutral-hover mb-2 opacity-0 transition-all pointer-events-none;}
-.tooltip:hover::after {@apply opacity-100;}
-
-#hero {@apply max-md:flex-col-reverse flex-nowrap justify-between items-center gap-4 sm:gap-8;}
-.hero-intro {@apply relative z-3 flex flex-col max-md:items-center shrink gap-2 max-md:pt-8;}
+#hero {@apply overflow-hidden bg-gradient-primary;} /* header height 92-124px */
+#hero .container {@apply flex-col-reverse md:flex-row md:justify-between max-md:gap-12 /*max-md:gap-16 min-h-dvh*/ pt-39;}
+.hero-intro {@apply relative z-3 flex flex-col max-md:items-center gap-0 md:gap-2;}
 .hero-intro > * {@apply w-fit;}
 .hero-intro em {@apply text-xl font-medium text-primary-base;}
+.hero-intro:hover em {@apply text-warning-soft transition-all;}
 .hero-intro em .icon-material {@apply align-middle animate-bounce transition-all;}
-.hero-intro:hover .icon-material {@apply text-warning-soft scale-135;}
-.hero-intro h1 {@apply text-7xl leading-[1.2] max-md:text-center text-gradient -ml-1;}
-.hero-intro h2 {@apply text-2xl text-shadow-md/60 text-shadow-white;}
-.hero-present {@apply relative w-90 h-80;}
-.hero-present img {@apply absolute z-2 right-9 min-w-80 h-80 object-cover rounded-[33.33%] shadow-2xl/5 transition-all;}
-#hero:hover .hero-present img {@apply rotate-5;}
+.hero-intro:hover .icon-material {@apply scale-135;}
+.hero-intro h1 {@apply text-5xl lg:text-6xl leading-[1.2] max-md:text-center text-gradient md:-ml-1
+                       whitespace-normal md:whitespace-nowrap;}
+.hero-intro h2 {@apply text-xl md:text-2xl max-md:text-center text-shadow-md/60 text-shadow-white;}
+.hero-intro .button-row {@apply pt-8 md:pt-3;}
+.hero-present {@apply relative md:w-80 md:h-80;}
+.hero-present img {@apply md:absolute z-2 right-0 w-[80%] md:min-w-80 max-w-80 aspect-square object-cover rounded-[33.33%] mx-auto shadow-2xl/10 shadow-pink-500 transition-all;}
+#hero:hover .hero-present img {@apply rotate-5 shadow-indigo-500;}
+#hero:hover .hero-present:hover img {@apply rotate-10 shadow-purple-500;}
 .hero-present:before ,
-.hero-present:after  {@apply absolute top-0 right-9 content-[""] block size-80 border-0 rounded-[33.33%] transition-all;}
-.hero-present:before {@apply z-1 border-white duration-300;}
-.hero-present:after  {@apply z-4 border-neutral-100 delay-75 duration-300;}
-#hero:hover .hero-present:before {@apply rotate-15 border-3 shadow-2xl/5;}
-#hero:hover .hero-present:after  {@apply rotate-60 border-3 border-primary-disable shadow-2xl/5;}
-#hero:hover .hero-present:hover:before {@apply rotate-30 border-3 border-primary-soft;}
-#hero:hover .hero-present:hover:after  {@apply rotate-75 border-3 border-warning-disable;}
-#hero ul {@apply hidden /*flex gap-2*/;}
+.hero-present:after  {@apply absolute top-0 right-1/2 md:right-0 max-md:translate-x-1/2 content-[""] block w-[80%] md:min-w-80 max-w-80 aspect-square border-0 rounded-[33.33%] duration-300 transition-all;}
+.hero-present:before {@apply z-1 border-white;}
+.hero-present:after  {@apply z-4 border-neutral-100 delay-75;}
+#hero:hover .hero-present:before {@apply  rotate-20 border-3 shadow-2xl/10 shadow-pink-500;}
+#hero:hover .hero-present:after  {@apply -rotate-15 border-3 border-primary-disable shadow-2xl/10 shadow-purple-500;}
+#hero:hover .hero-present:hover:before {@apply rotate-75 border-3 border-primary-soft shadow-indigo-500;}
+#hero:hover .hero-present:hover:after  {@apply -rotate-40 border-3 border-warning-disable shadow-orange-500;}
 
 .work-list {@apply grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8;}
 .work-list > li {@apply frame relative p-2;}
 .work-details {@apply absolute left-0 bottom-0 flex flex-col gap-3 w-[calc(100%+2px)] p-4 border border-primary-disable rounded-2xl -m-px bg-white/95
                                             opacity-0 translate-y-4 delay-75 duration-300 transition-all;}
 .work-list > li:hover .work-details {@apply opacity-100 translate-y-0;}
-.work-details h3 {@apply text-sm text-content-base hover:text-content-hover;}
+.work-details h3 {@apply inline text-sm text-content-hover mr-1;}
+.work-details p  {@apply inline text-sm text-content-base;}
 .work-details ul {@apply flex flex-wrap gap-2;}
 
-#skill .frame {@apply md:flex-row gap-2 w-195;}
-#skill h3 {@apply flex items-start gap-2 whitespace-nowrap min-w-27 text-base text-primary-soft;}
+#skill {@apply inset-shadow-xs inset-shadow-white bg-gradient-primary;}
+#skill .frame {@apply md:flex-row gap-2 w-195 max-w-full;}
+#skill h3 {@apply flex items-start gap-2 whitespace-nowrap min-w-27 text-base text-primary-base;}
 #skill .frame:hover h3 {@apply text-primary-hover;}
 #skill h3 br {@apply max-md:hidden;}
 #skill ul {@apply flex flex-wrap gap-2 mt-0.5;}
 
-#experience ul {@apply list-disc text-sm;}
-#experience li {@apply ml-4.25;}
 #experience h3 {@apply text-base font-medium;}
 #experience .badge {@apply align-text-bottom;}
+.experience-list {@apply flex flex-col gap-4 sm:gap-8 w-230 max-w-full;}
+.experience-list details + details {@apply mt-0;}
+#experience summary {@apply flex-wrap max-xs:flex-col 2xs:pr-14 sm:pr-22;}
+#experience summary > div {@apply relative z-1;}
+#experience details.love summary h6 {@apply absolute -top-6.5 sm:-top-6 left-4 opacity-0 italic tracking-wide text-white bg-gradient delay-75 duration-300 transition-all;}
+#experience details.love:hover summary h6 {@apply left-0 opacity-100;}
+#experience summary h4 {@apply text-primary-base;}
+#experience summary:hover h4 {@apply text-primary-hover;}
+#experience summary .experience-year {@apply max-xs:flex flex-wrap gap-2 xs:text-right max-2xs:pr-10;}
+#experience summary h5 {@apply xs:leading-6 text-content-base;}
+#experience summary:after {@apply absolute 2xs:top-1/2 max-2xs:bottom-2 right-2 2xs:right-4 sm:right-8 2xs:-translate-y-1/2
+                                  max-2xs:p-2 max-2xs:rounded-lg max-2xs:bg-neutral-lighter;}
+#experience li {@apply hover:text-content-hover transition-all;}
 
-#contact {@apply items-start;}
-
+#contact {@apply inset-shadow-xs inset-shadow-white bg-gradient-primary;}
+#contact .container {@apply md:flex-row-reverse flex-wrap md:items-start;}
+#contact .heading {@apply w-full;}
+#contact .frame {@apply hover:scale-none;}
+#contactForm {@apply grow md:w-1/2;}
+#contactForm button {@apply overflow-hidden;}
+#contactForm button span {@apply relative z-1;}
+#contactForm button:after {@apply absolute z-0 top-0 right-full content-[""] block w-full h-full rounded-lg bg-gradient
+                                  opacity-100 delay-75 duration-600 transition-all;}
+#contactForm button:hover:after {@apply opacity-100 right-0;}
+#contactInformation {@apply max-md:items-center max-md:w-full;}
 #contactInformation hr {@apply w-[calc(100%+32px)] sm:w-[calc(100%+64px)] -ml-4 sm:-ml-8 sm:my-4;}
-#contactProfile {@apply flex flex-col;}
-#contactProfile li a {@apply block pl-0 pr-8 hover:px-4 py-2 rounded-lg hover:text-primary-hover hover:bg-primary-light/60 transition-all;}
+#contactProfile {@apply flex flex-col gap-2 max-md:items-center;}
+#contactProfile li a:not(.button) {@apply block pl-0 pr-8 hover:px-4 py-2 rounded-lg hover:text-primary-hover hover:bg-primary-light/60 transition-all;}
 #contactProfile .badge {@apply px-0 hover:bg-transparent;}
-#contactProfile li a:hover .badge {@apply text-primary-hover px-2 bg-white;}
-
-#contactFollow {@apply flex gap-3;}
-#contactFollow a svg {@apply size-5 fill-content-soft transition-all;}
-#contactFollow [data-tooltip="LinkedIn"]:hover svg {@apply fill-[#0077b5];}
-#contactFollow [data-tooltip="GitHub"]:hover svg {@apply fill-black;}
-#contactFollow a span {@apply hidden;}
-
-#contactForm {@apply grow w-1/2;}
+#contactProfile li a:not(.button):hover .badge {@apply text-primary-hover px-2 bg-white;}
