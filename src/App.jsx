@@ -6,12 +6,12 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Work from "./components/Work";
 import Skill from "./components/Skill";
 import Experience from "./components/Experience";
-import Work from "./components/Work";
 import Contact from "./components/Contact";
 
-function App() {
+export default function App() {
 
   const isDev = true;
 
@@ -28,7 +28,6 @@ function App() {
       </main>
       <Footer />
     </>
-  )
-}
+  );
 
-export default App
+};
