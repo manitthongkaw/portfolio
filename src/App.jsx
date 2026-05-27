@@ -1,6 +1,6 @@
 //import { useState } from 'react'
 
-import "./assets/css/App.css";
+import "./assets/css/app.css";
 
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
