@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+@theme {
+  --font-googlesans:"Google Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --breakpoint-2xs:20rem; /* 320px */
+  --breakpoint-xs:29.875rem; /* 478px */
+
+  /* Primary */
+  --color-primary-50 :#f0efff;
+  --color-primary-100:#dde1ff;
+  --color-primary-200:#b8c3ff;
+  --color-primary-300:#99a7ed;
+  --color-primary-400:#7f8dd1;
+  --color-primary-500:#6573b5;
+  --color-primary-600:#4c5a9b;
+  --color-primary-700:#344281;
+  --color-primary-800:#1c2b69;
+  --color-primary-900:#011354;
+  --color-primary-950:#000a3c;
+  --color-primary-lighter:var(--color-primary-50) ;
+  --color-primary-light  :var(--color-primary-100);
+  --color-primary-disable:var(--color-primary-200);
+  --color-primary-soft   :var(--color-primary-300);
+  --color-primary-base   :var(--color-primary-400);
+  --color-primary-hover  :var(--color-primary-500);
+  --color-primary-dark   :var(--color-primary-800);
+  --color-primary-darker :var(--color-primary-900);
+
+  /* Secondary
+  --color-secondary-50 :var(--color-violet-50) ;
+  --color-secondary-100:var(--color-violet-100);
+  --color-secondary-200:var(--color-violet-200);
+  --color-secondary-300:var(--color-violet-300);
+  --color-secondary-400:var(--color-violet-400);
+  --color-secondary-500:var(--color-violet-500);
+  --color-secondary-600:var(--color-violet-600);
+  --color-secondary-700:var(--color-violet-700);
+  --color-secondary-800:var(--color-violet-800);
+  --color-secondary-900:var(--color-violet-900);
+  --color-secondary-950:var(--color-violet-500);
+  --color-secondary-lighter:var(--color-secondary-50) ;
+  --color-secondary-light  :var(--color-secondary-100);
+  --color-secondary-disable:var(--color-secondary-200);
+  --color-secondary-soft   :var(--color-secondary-300);
+  --color-secondary-base   :var(--color-secondary-400);
+  --color-secondary-hover  :var(--color-secondary-500);
+  --color-secondary-dark   :var(--color-secondary-800);
+  --color-secondary-darker :var(--color-secondary-900); */
+
+  /* Tertiary */
+
+  /* Accent */
+  --color-accent-50 :#fffbeb;
+  --color-accent-100:#fef3c7;
+  --color-accent-200:#fde68a;
+  --color-accent-300:#fcd34d;
+  --color-accent-400:#fbbf24;
+  --color-accent-500:#f59e0b;
+  --color-accent-600:#d97706;
+  --color-accent-700:#b45309;
+  --color-accent-800:#92400e;
+  --color-accent-900:#78350f;
+  --color-accent-950:#451a03;
+  --color-accent-lighter:var(--color-accent-50) ;
+  --color-accent-light  :var(--color-accent-100);
+  --color-accent-disable:var(--color-accent-200);
+  --color-accent-soft   :var(--color-accent-300);
+  --color-accent-base   :var(--color-accent-400);
+  --color-accent-hover  :var(--color-accent-500);
+  --color-accent-dark   :var(--color-accent-800);
+  --color-accent-darker :var(--color-accent-900);
+
+  /* Error */
+  --color-error-50 :#ffedec;
+  --color-error-100:#ffdad9;
+  --color-error-200:#ffb3b3;
+  --color-error-300:#ff888b;
+  --color-error-400:#ff525f;
+  --color-error-500:#dd3547;
+  --color-error-600:#ba1732;
+  --color-error-700:#920021;
+  --color-error-800:#680014;
+  --color-error-900:#400009;
+  --color-error-950:#2c0004;
+  --color-error-lighter:var(--color-error-50) ;
+  --color-error-light  :var(--color-error-100);
+  --color-error-disable:var(--color-error-200);
+  --color-error-soft   :var(--color-error-300);
+  --color-error-base   :var(--color-error-400);
+  --color-error-hover  :var(--color-error-500);
+  --color-error-dark   :var(--color-error-800);
+  --color-error-darker :var(--color-error-900);
+
+  /* Warning */
+  --color-warning-50 :#ffede5;
+  --color-warning-100:#ffdbca;
+  --color-warning-200:#ffb68e;
+  --color-warning-300:#ff8d47;
+  --color-warning-400:#e96c0a;
+  --color-warning-500:#c25800;
+  --color-warning-600:#9c4500;
+  --color-warning-700:#773300;
+  --color-warning-800:#542200;
+  --color-warning-900:#331200;
+  --color-warning-950:#220a00;
+  --color-warning-lighter:var(--color-warning-50) ;
+  --color-warning-light  :var(--color-warning-100);
+  --color-warning-disable:var(--color-warning-200);
+  --color-warning-soft   :var(--color-warning-300);
+  --color-warning-base   :var(--color-warning-400);
+  --color-warning-hover  :var(--color-warning-500);
+  --color-warning-dark   :var(--color-warning-800);
+  --color-warning-darker :var(--color-warning-900);
+
+  /* Success */
+  --color-success-50 :#c8ffc1;
+  --color-success-100:#b6f2af;
+  --color-success-200:#77dc78;
+  --color-success-300:#5cc060;
+  --color-success-400:#40a448;
+  --color-success-500:#208931;
+  --color-success-600:#006e1f;
+  --color-success-700:#005315;
+  --color-success-800:#00390c;
+  --color-success-900:#002204;
+  --color-success-950:#001502;
+  --color-success-lighter:var(--color-success-50) ;
+  --color-success-light  :var(--color-success-100);
+  --color-success-disable:var(--color-success-200);
+  --color-success-soft   :var(--color-success-300);
+  --color-success-base   :var(--color-success-400);
+  --color-success-hover  :var(--color-success-500);
+  --color-success-dark   :var(--color-success-800);
+  --color-success-darker :var(--color-success-900);
+
+  /* Info */
+
+  /* Neutral for background/border
+  --color-neutral-50 :#f8fafc;
+  --color-neutral-100:#f1f5f9;
+  --color-neutral-200:#e2e8f0;
+  --color-neutral-300:#cad5e2;
+  --color-neutral-400:#90a1b9;
+  --color-neutral-500:#62748e;
+  --color-neutral-600:#45556c;
+  --color-neutral-700:#314158;
+  --color-neutral-800:#1d293d;
+  --color-neutral-900:#0f172b;
+  --color-neutral-950:#020618; */
+  --color-neutral-lighter:var(--color-neutral-50) ;
+  --color-neutral-light  :var(--color-neutral-100);
+  --color-neutral-disable:var(--color-neutral-200);
+  --color-neutral-soft   :var(--color-neutral-300);
+  --color-neutral-base   :var(--color-neutral-400);
+  --color-neutral-hover  :var(--color-neutral-500);
+  --color-neutral-dark   :var(--color-neutral-800);
+  --color-neutral-darker :var(--color-neutral-900);
+
+  /* Content for text/content/foreground */
+  --color-content-50 :#f9fafb;
+  --color-content-100:#f3f4f6;
+  --color-content-200:#e5e7eb;
+  --color-content-300:#d1d5dc;
+  --color-content-400:#99a1af;
+  --color-content-500:#6a7282;
+  --color-content-600:#4a5565;
+  --color-content-700:#364153;
+  --color-content-800:#1e2939;
+  --color-content-900:#101828;
+  --color-content-950:#030712;
+  --color-content-lighter:var(--color-content-50) ;
+  --color-content-light  :var(--color-content-100);
+  --color-content-disable:var(--color-content-200);
+  --color-content-soft   :var(--color-content-400);
+  --color-content-base   :var(--color-content-500);
+  --color-content-hover  :var(--color-content-600);
+  --color-content-dark   :var(--color-content-800);
+  --color-content-darker :var(--color-content-900);
+}
