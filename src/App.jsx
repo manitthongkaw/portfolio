@@ -13,8 +13,6 @@ import Contact from "./components/Contact";
 
 export default function App() {
 
-  const isDev = true;
-
   return (
     <>
       <Header />
@@ -23,7 +21,7 @@ export default function App() {
         <About />
         <Work />
         <Skill />
-        {isDev && <Experience />}
+        <Experience />
         <Contact />
       </main>
       <Footer />
