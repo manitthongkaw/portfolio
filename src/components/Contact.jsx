@@ -33,23 +33,24 @@ export default function Contact() {
               </div>
               <div className="input-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" value={contactForm.email} onChange={handleContactChange} placeholder="Your email" maxLength="120" />
+                <input type="email" id="email" name="email" value={contactForm.email} onChange={handleContactChange} placeholder="your@email.com" maxLength="120" />
               </div>
             </div>
             <div className="input-group">
               <label htmlFor="subject">Subject</label>
-              <input type="text" id="subject" name="subject" value={contactForm.subject} onChange={handleContactChange} placeholder="Subject of your message" maxLength="120" />
+              <input type="text" id="subject" name="subject" value={contactForm.subject} onChange={handleContactChange} placeholder="What's this about?" maxLength="120" />
             </div>
             <div className="input-group">
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows="5" value={contactForm.message} onChange={handleContactChange} placeholder="Your message"></textarea>
+              <textarea id="message" name="message" rows="5" value={contactForm.message} onChange={handleContactChange} placeholder="Tell me about your project..."></textarea>
             </div>
-            <div className="button-row sm:pt-4">
+            <div className="button-row">
               <button type="submit" className="button w-full">
                 <span className="text">Send Message</span>
                 <span className="icon-material">send</span></button>
             </div>
           </form>
+          <p>or reach me directly at manitthongkaw(at)gmail.com</p>
         </div>
         <div id="contactInformation" className="frame">
           <h3>Information</h3>
@@ -61,7 +62,7 @@ export default function Contact() {
             <li className="badge badge-ghost badge-content text-sm font-medium">
               <span className="icon-material">location_on</span> Location: Thailand
             </li>
-            <li><a className="button button-soft button-primary w-full text-sm font-medium mt-4" href="#download-cv">
+            <li><a className="button button-soft button-primary w-full text-sm font-medium mt-4" href="https://drive.google.com/file/d/1Y_ysPl9JTJ4lE0KR2dWP5pv_D7KktHo7/view?usp=drive_link" target="_blank">
               <span className="icon-material">file_save</span> Download CV PDF file</a></li>
           </ul>
           <hr />

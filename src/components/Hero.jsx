@@ -8,10 +8,11 @@ export default function Hero() {
         <div className="hero-intro">
           <em>Hello, <span className="icon-material">waving_hand</span></em>
           <h1>I'm Manit Thongkaw</h1>
-          <h2>I'm a Full-Stack Software Developer</h2>
+          <h2>Full-Stack Developer with a Designer's Eye.</h2>
+          <p>I build web applications that work precisely and look intentional.</p>
           <div className="button-row">
-            <a className="button w-30 grow" href="#contact">Touch me</a>
-            <a className="button button-outline border-2 w-30 grow bg-transparent" href="#work">Work</a>
+            <a className="button" href="#work">View My Work</a>
+            <a className="button button-outline" href="#contact">Let's Talk</a>
           </div>
         </div>
         <div className="hero-present">

@@ -4,23 +4,23 @@ export const skills = [
     title: "Technical Skills",
     icon: "terminal",
     items: [
-      "React.js",
-      "JavaScript (ES6+)",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Bootstrap",
-      "Responsive Design",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "PostgreSQL",
-      "REST API",
-      "JWT Auth",
-      "Git",
-      "GitHub",
-      "jQuery",
-      "WordPress"
+      { name: "React.js", highlight: true },
+      { name: "JavaScript (ES6+)", highlight: true },
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "Tailwind CSS" },
+      { name: "Bootstrap" },
+      { name: "Responsive Design", highlight: true },
+      { name: "Node.js", highlight: true },
+      { name: "Express.js", highlight: true },
+      { name: "MongoDB", highlight: true },
+      { name: "PostgreSQL" },
+      { name: "REST API" },
+      { name: "JWT Auth" },
+      { name: "Git" },
+      { name: "GitHub" },
+      { name: "jQuery" },
+      { name: "WordPress" }
     ]
   },
   {
@@ -28,13 +28,13 @@ export const skills = [
     title: "Design & Tools",
     icon: "design_services",
     items: [
-      "Figma",
-      "Adobe Photoshop",
-      "Adobe Illustrator",
-      "Adobe InDesign",
-      "ClickUp",
-      "Trello",
-      "Slack"
+      { name: "Figma", highlight: true },
+      { name: "Adobe Photoshop" },
+      { name: "Adobe Illustrator" },
+      { name: "Adobe InDesign" },
+      { name: "ClickUp" },
+      { name: "Trello" },
+      { name: "Slack" }
     ]
   },
   {
@@ -42,11 +42,12 @@ export const skills = [
     title: "Soft Skills",
     icon: "psychology",
     items: [
-      "Time Management",
-      "Problem Solving",
-      "Detail Orientation",
-      "Agile Adaptability",
-      "Growth Mindset"
+      { name: "Agile / Scrum", highlight: true },
+      { name: "Time Management" },
+      { name: "Problem Solving" },
+      { name: "Detail Orientation" },
+      { name: "Agile Adaptability" },
+      { name: "Growth Mindset" }
     ]
   }
 ];
