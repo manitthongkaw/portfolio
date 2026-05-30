@@ -7,10 +7,7 @@ export default function Skill() {
       <div className="container">
         <div className="heading">
           <h2>Tech Stack</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            officiis recusandae vel molestias enim.
-          </p>
+          <p>Tools I use to take a product from idea to production.</p>
         </div>
         {skills?.length > 0 &&
           skills.map((skill) =>
@@ -18,11 +15,11 @@ export default function Skill() {
               <div key={skill.id} className={`frame ${skill.id}`}>
                 <h3>
                   <span className="icon-material">{skill.icon}</span>
-                  {skill.title}
+                  <span className="text">{skill.title}</span>
                 </h3>
                 <ul>
-                  {skill.items.map((item) => (
-                    <li key={`${skill.id}-${item}`} className="badge badge-soft badge-content">{item}</li>
+                  {skill.items.map((item, index) => (
+                    <li key={`${skill.id}-${index}`} className={`badge badge-soft ${item?.highlight ? "badge-primary" : "badge-content"}`}>{item.name}</li>
                   ))}
                 </ul>
               </div>

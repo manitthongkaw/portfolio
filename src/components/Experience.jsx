@@ -9,13 +9,13 @@ export default function Experience() {
       <div className="container">
         <div className="heading">
           <h2>Experience</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam officiis recusandae vel molestias enim.</p>
+          <p>15+ years of professional work — from pixels to production code.</p>
         </div>
         <div className="experience-list">
           {latestExperiences?.length > 0 &&
             latestExperiences.map((experience) =>
               experience.descriptions?.length > 0 && (
-                <details key={experience.id} className={experience.label ? "love" : ""} open={experience.isOpen}>
+                <details key={experience.id} className={experience.label ? "star" : ""} open={experience.isOpen}>
                   <summary>
                     <div className="title">
                       {experience.label && <h6 className="badge">{experience.label}</h6>}
@@ -29,7 +29,7 @@ export default function Experience() {
                   </summary>
                   <ul className="experience-content">
                     {experience.descriptions.map((description, index) => (
-                      <li key={`${experience.id}-${index}`}>{description}</li>
+                      <li key={`${experience.id}-${index}`} dangerouslySetInnerHTML={{ __html: description }} />
                     ))}
                   </ul>
                 </details>

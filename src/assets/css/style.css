@@ -53,7 +53,7 @@
   summary:after {
     font-family:"Material Symbols Outlined"; font-weight:normal; font-style:normal; font-size:24px;
     line-height:1; letter-spacing:normal; text-transform:none;
-    display:inline-block; vertical-align:bottom; white-space:nowrap; word-wrap:normal; direction:ltr;
+    display:inline-block; vertical-align:middle; white-space:nowrap; word-wrap:normal; direction:ltr;
     font-feature-settings:"liga"; -webkit-font-smoothing:antialiased;
   }
   /* Google Icon */
@@ -96,7 +96,7 @@
   .button-outline {@apply leading-9.5;}
   .badge-outline  {@apply leading-4.5;}
   .badge-sm.badge-outline  {@apply leading-3.5;}
-  .button-outline , .badge-outline {@apply border bg-white hover:bg-white;}
+  .button-outline , .badge-outline {@apply border-2 /*bg-white hover:bg-white*/ bg-transparent hover:bg-transparent;}
   .button-outline , .badge-outline ,
   .button-outline.button-primary , .badge-outline.badge-primary {@apply text-primary-base  border-primary-disable hover:border-primary-hover;}
   .button-outline.button-accent  , .badge-outline.badge-accent  {@apply text-accent-hover  border-accent-base     hover:border-accent-hover ;}
@@ -157,12 +157,11 @@ header nav.active {@apply max-sm:p-2.25 max-sm:border max-sm:border-t-0 max-sm:b
                           max-sm:bg-white max-sm:-mx-px max-sm:mt-px max-sm:shadow-2xl/5;}
 header nav ul {@apply flex flex-col sm:flex-row;}
 header .nav-brand ,
-header nav a ,
+header nav a:not(.button) ,
 header button {@apply block leading-10 font-medium text-center text-content-hover hover:text-white
                       text-shadow-lg/20 text-shadow-white hover:text-shadow-none
                       px-4 rounded-lg hover:bg-primary-hover transition-all;}
 header .nav-toggle {@apply sm:hidden w-10 p-0;}
-header .nav-toggle .icon-material {@apply align-middle;}
 
 footer {@apply rounded-t-4xl inset-shadow-xs inset-shadow-pink-100 bg-white shadow-2xl-reverse -mt-8;}
 footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400px]:justify-between gap-2 py-4;}
@@ -178,30 +177,43 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
 .tooltip:after {@apply content-[attr(data-tooltip)] whitespace-nowrap absolute left-1/2 -translate-x-1/2 bottom-full text-xs text-balance text-white px-2 py-1 rounded bg-neutral-hover mb-2 opacity-0 transition-all pointer-events-none;}
 .tooltip:hover:after {@apply opacity-100;}
 
-#hero {@apply overflow-hidden bg-gradient-primary;} /* header height 92-124px */
-#hero .container {@apply flex-col-reverse md:flex-row md:justify-between max-md:gap-12 /*max-md:gap-16 min-h-dvh*/ pt-39;}
-.hero-intro {@apply relative z-3 flex flex-col max-md:items-center gap-0 md:gap-2;}
+#hero {@apply overflow-hidden bg-gradient-primary;}
+#hero .container {@apply flex-col-reverse md:flex-row md:justify-between max-md:gap-12 pt-39;}
+.hero-intro {@apply relative z-3 flex flex-col text-balance max-md:items-center gap-2;}
 .hero-intro > * {@apply w-fit;}
 .hero-intro em {@apply text-xl font-medium text-primary-base;}
 .hero-intro:hover em {@apply text-warning-soft transition-all;}
-.hero-intro em .icon-material {@apply align-middle animate-bounce transition-all;}
+.hero-intro em .icon-material {@apply animate-bounce transition-all;}
 .hero-intro:hover .icon-material {@apply scale-135;}
-.hero-intro h1 {@apply text-5xl lg:text-6xl leading-[1.2] max-md:text-center text-gradient md:-ml-1
-                       whitespace-normal md:whitespace-nowrap;}
-.hero-intro h2 {@apply text-xl md:text-2xl max-md:text-center text-shadow-md/60 text-shadow-white;}
-.hero-intro .button-row {@apply pt-8 md:pt-3;}
+.hero-intro h1 {@apply text-4xl 2xs:text-5xl lg:text-6xl leading-[1.2] md:whitespace-nowrap max-md:text-center text-gradient md:-ml-1;}
+.hero-intro h2 {@apply text-xl md:text-2xl md:whitespace-nowrap max-md:text-center text-shadow-md/60 text-shadow-white;}
+.hero-intro p {@apply text-lg max-md:text-center;}
+.hero-intro .button-row {@apply pt-4;}
+.hero-intro .button {@apply w-35 grow;}
 .hero-present {@apply relative md:w-80 md:h-80;}
-.hero-present img {@apply md:absolute z-2 right-0 w-[80%] md:min-w-80 max-w-80 aspect-square object-cover rounded-[33.33%] mx-auto shadow-2xl/10 shadow-pink-500 transition-all;}
+.hero-present img {@apply md:absolute z-2 right-0 w-[60%] md:min-w-80 max-w-80 aspect-square object-cover rounded-[33.33%] mx-auto shadow-2xl/10 shadow-pink-500 transition-all;}
 #hero:hover .hero-present img {@apply rotate-5 shadow-indigo-500;}
 #hero:hover .hero-present:hover img {@apply rotate-10 shadow-purple-500;}
 .hero-present:before ,
-.hero-present:after  {@apply absolute top-0 right-1/2 md:right-0 max-md:translate-x-1/2 content-[""] block w-[80%] md:min-w-80 max-w-80 aspect-square border-0 rounded-[33.33%] duration-300 transition-all;}
+.hero-present:after  {@apply absolute top-0 right-1/2 md:right-0 max-md:translate-x-1/2 content-[""] block w-[60%] md:min-w-80 max-w-80 aspect-square border-0 rounded-[33.33%] duration-300 transition-all;}
 .hero-present:before {@apply z-1 border-white;}
 .hero-present:after  {@apply z-4 border-neutral-100 delay-75;}
 #hero:hover .hero-present:before {@apply  rotate-20 border-3 shadow-2xl/10 shadow-pink-500;}
 #hero:hover .hero-present:after  {@apply -rotate-15 border-3 border-primary-disable shadow-2xl/10 shadow-purple-500;}
 #hero:hover .hero-present:hover:before {@apply rotate-75 border-3 border-primary-soft shadow-indigo-500;}
 #hero:hover .hero-present:hover:after  {@apply -rotate-40 border-3 border-warning-disable shadow-orange-500;}
+
+#about .container {@apply flex-col lg:flex-row-reverse xl:gap-16;}
+#about .heading {@apply flex-1 max-w-130 lg:text-left;}
+#about .heading h2 {@apply pb-4 lg:mx-0;}
+#about p + p {@apply text-base pt-3;}
+.about-count {@apply flex max-xs:flex-col justify-center gap-4 sm:gap-8 max-xs:w-fit pt-6 max-xs:mx-auto;}
+.about-count .frame {@apply max-xs:flex-row flex-1 max-xs:items-center gap-2 max-xs:w-full p-4;}
+.about-count h3 {@apply min-w-9.5 text-2xl leading-[0.8] text-right text-primary-soft;}
+.about-count .frame:hover h3 {@apply text-primary-base;}
+#about .about-count p {@apply text-base text-left;}
+.about-present {@apply flex-1 frame max-w-172 lg:max-w-120 p-2 hover:scale-none;}
+.about-present img {@apply object-cover aspect-video lg:aspect-3/4;}
 
 .work-list {@apply grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8;}
 .work-list > li {@apply frame relative p-2;}
@@ -213,10 +225,10 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
 .work-details ul {@apply flex flex-wrap gap-2;}
 
 #skill {@apply inset-shadow-xs inset-shadow-white bg-gradient-primary;}
-#skill .frame {@apply md:flex-row gap-2 w-195 max-w-full;}
+#skill .frame {@apply md:flex-row gap-2 sm:gap-4 w-196 max-w-full;}
 #skill h3 {@apply flex items-start gap-2 whitespace-nowrap min-w-27 text-base text-primary-base;}
 #skill .frame:hover h3 {@apply text-primary-hover;}
-#skill h3 br {@apply max-md:hidden;}
+#skill h3 .text {@apply md:w-19 md:whitespace-normal;}
 #skill ul {@apply flex flex-wrap gap-2 mt-0.5;}
 
 #experience h3 {@apply text-base font-medium;}
@@ -225,8 +237,8 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
 .experience-list details + details {@apply mt-0;}
 #experience summary {@apply flex-wrap max-xs:flex-col 2xs:pr-14 sm:pr-22;}
 #experience summary > div {@apply relative z-1;}
-#experience details.love summary h6 {@apply absolute -top-6.5 sm:-top-6 left-4 opacity-0 italic tracking-wide text-white bg-gradient delay-75 duration-300 transition-all;}
-#experience details.love:hover summary h6 {@apply left-0 opacity-100;}
+#experience details.star summary h6 {@apply absolute -top-6.5 sm:-top-6 left-4 opacity-0 italic tracking-wide text-white bg-gradient delay-75 duration-300 transition-all;}
+#experience details.star:hover summary h6 {@apply left-0 opacity-100;}
 #experience summary h4 {@apply text-primary-base;}
 #experience summary:hover h4 {@apply text-primary-hover;}
 #experience summary .experience-year {@apply max-xs:flex flex-wrap gap-2 xs:text-right max-2xs:pr-10;}
@@ -238,9 +250,10 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
 #contact {@apply inset-shadow-xs inset-shadow-white bg-gradient-primary;}
 #contact .container {@apply md:flex-row-reverse flex-wrap md:items-start;}
 #contact .heading {@apply w-full;}
+#contact .heading em {@apply pl-1;}
 #contact .frame {@apply hover:scale-none;}
-#contactForm {@apply grow md:w-1/2;}
-#contactForm button {@apply overflow-hidden;}
+#contactForm {@apply items-center grow md:w-1/2;}
+#contactForm button {@apply overflow-hidden sm:my-4;}
 #contactForm button span {@apply relative z-1;}
 #contactForm button:after {@apply absolute z-0 top-0 right-full content-[""] block w-full h-full rounded-lg bg-gradient
                                   opacity-100 delay-75 duration-600 transition-all;}

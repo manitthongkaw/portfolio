@@ -5,7 +5,7 @@ export default function Work() {
       <div className="container">
         <div className="heading">
           <h2>Work</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam officiis recusandae vel molestias enim.</p>
+          <p>Selected projects — from concept to shipped product.</p>
         </div>
         <ul className="work-list">
           <li>
