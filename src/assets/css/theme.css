@@ -2,6 +2,7 @@
   --font-googlesans:"Google Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --breakpoint-2xs:20rem; /* 320px */
   --breakpoint-xs:29.875rem; /* 478px */
+  --breakpoint-nav-toogle:700px;
 
   /* Primary */
   --color-primary-50 :#f0efff;

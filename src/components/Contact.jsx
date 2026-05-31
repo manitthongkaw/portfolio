@@ -50,28 +50,28 @@ export default function Contact() {
                 <span className="icon-material">send</span></button>
             </div>
           </form>
-          <p>or reach me directly at manitthongkaw(at)gmail.com</p>
         </div>
         <div id="contactInformation" className="frame">
           <h3>Information</h3>
           <ul id="contactProfile">
             <li>Manit Thongkaw</li>
             <li className="badge badge-ghost badge-content text-sm font-medium">
-              <span className="icon-material">mail</span> manitthongkaw(at)gmail.com
-              </li>
+              <span className="icon-material">mail</span>
+              <span className="text">manitthongkaw(at)gmail.com</span>
+            </li>
             <li className="badge badge-ghost badge-content text-sm font-medium">
               <span className="icon-material">location_on</span> Location: Thailand
             </li>
-            <li><a className="button button-soft button-primary w-full text-sm font-medium mt-4" href="https://drive.google.com/file/d/1Y_ysPl9JTJ4lE0KR2dWP5pv_D7KktHo7/view?usp=drive_link" target="_blank">
-              <span className="icon-material">file_save</span> Download CV PDF file</a></li>
+            <li><a className="button button-soft button-primary w-full text-sm font-medium mt-4" href="https://drive.google.com/file/d/1Y_ysPl9JTJ4lE0KR2dWP5pv_D7KktHo7/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span className="icon-material">file_save</span> Download CV</a></li>
           </ul>
           <hr />
           <h3>Professional Profiles</h3>
           <ul className="follow-me">
-            <li><a className="tooltip" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/manitthongkaw" target="_blank">
+            <li><a className="tooltip" data-tooltip="LinkedIn" href="https://www.linkedin.com/in/manitthongkaw" target="_blank" rel="noopener noreferrer">
               <Icon icon="linkedin" />
               <span className="text">LinkedIn</span></a></li>
-            <li><a className="tooltip" data-tooltip="GitHub" href="https://github.com/manitthongkaw" target="_blank">
+            <li><a className="tooltip" data-tooltip="GitHub" href="https://github.com/manitthongkaw" target="_blank" rel="noopener noreferrer">
               <Icon icon="github" />
               <span className="text">GitHub</span></a></li>
           </ul>
