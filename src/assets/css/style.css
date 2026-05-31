@@ -138,6 +138,8 @@ a, button {@apply selection:text-white selection:bg-warning-disable;}
 li::marker {@apply text-primary-base;}
 li:hover::marker {@apply text-pink-400;}
 
+/*body:has(header nav.active) {@apply overflow-hidden;}
+body:has(header nav.active) header + * {@apply select-none;}*/
 main > section {@apply pb-8 bg-white;}
 main > section + section {@apply rounded-t-4xl inset-shadow-xs inset-shadow-pink-100 shadow-2xl-reverse -mt-8;}
 
@@ -145,26 +147,30 @@ main > section + section {@apply rounded-t-4xl inset-shadow-xs inset-shadow-pink
 .container > .heading {@apply w-full text-center max-sm:pb-2;}
 .container > .heading h2 {@apply w-fit text-3xl 2xs:text-4xl text-gradient pb-1 mx-auto;}
 .container > .heading p {@apply text-lg text-balance;}
-header {@apply fixed z-99 top-0 left-1/2 -translate-x-1/2 w-full px-1.5 sm:px-5.5 pt-8;}
-header .container {@apply flex flex-row justify-between content-center items-center gap-2 w-309
+header {@apply fixed z-99 top-0 left-1/2 -translate-x-1/2 w-full px-1.5 sm:px-5.5 pt-4 sm:pt-8;}
+/*header:after {@apply content-[""] fixed z-89 left-0 top-0 min-nav-toogle:hidden w-full h-0 bg-neutral-lighter/90
+                     delay-75 duration-300 transition-all;}
+header:has(nav.active):after {@apply h-dvh;}*/
+header .container {@apply relative z-98 flex flex-row justify-between content-center items-center gap-2 w-309
                           p-2.25 border border-neutral-disable hover:border-primary-disable rounded-2xl
                           bg-white/20 hover:bg-primary-lighter/30
                           inset-shadow-xs inset-shadow-pink-100 shadow-2xl/5 hover:shadow-2xl/10 backdrop-blur-sm transition-all;}
-header .container:has(nav.active) {@apply max-sm:rounded-b-none max-sm:bg-gradient-primary;}
-header nav:not(.active) {@apply overflow-hidden max-sm:h-0;}
-header nav {@apply max-sm:absolute top-full left-0 max-sm:w-[calc(100%+2px)] transition-all;}
-header nav.active {@apply max-sm:p-2.25 max-sm:border max-sm:border-t-0 max-sm:border-neutral-disable max-sm:hover:border-primary-disable max-sm:rounded-b-2xl
-                          max-sm:bg-white max-sm:-mx-px max-sm:mt-px max-sm:shadow-2xl/5;}
-header nav ul {@apply flex flex-col sm:flex-row;}
+header .container:has(nav.active) {@apply max-nav-toogle:rounded-b-none max-nav-toogle:bg-gradient-primary transition-all;}
+header nav:not(.active) {@apply overflow-hidden max-nav-toogle:h-0;}
+header nav {@apply max-nav-toogle:absolute top-full left-0 max-nav-toogle:w-[calc(100%+2px)] transition-all;}
+header nav.active {@apply max-nav-toogle:p-2.25 max-nav-toogle:border max-nav-toogle:border-t-0
+                          max-nav-toogle:border-neutral-disable max-nav-toogle:hover:border-primary-disable max-nav-toogle:rounded-b-2xl
+                          max-nav-toogle:bg-white max-nav-toogle:-mx-px max-nav-toogle:mt-px max-nav-toogle:shadow-2xl/5;}
+header nav ul {@apply flex flex-col nav-toogle:flex-row;}
 header .nav-brand ,
 header nav a:not(.button) ,
 header button {@apply block leading-10 font-medium text-center text-content-hover hover:text-white
-                      text-shadow-lg/20 text-shadow-white hover:text-shadow-none
+                      text-shadow-lg/40 text-shadow-white hover:text-shadow-none
                       px-4 rounded-lg hover:bg-primary-hover transition-all;}
-header .nav-toggle {@apply sm:hidden w-10 p-0;}
+header .nav-toggle {@apply nav-toogle:hidden w-10 p-0;}
 
-footer {@apply rounded-t-4xl inset-shadow-xs inset-shadow-pink-100 bg-white shadow-2xl-reverse -mt-8;}
-footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400px]:justify-between gap-2 py-4;}
+footer {@apply -mt-8;}
+footer .container {@apply flex-col min-[400px]:flex-row justify-center gap-2 min-[400px]:gap-8 pt-0 pb-4;}
 .follow-me {@apply flex gap-3 text-sm font-medium text-primary-base;}
 .follow-me a svg {@apply size-5 fill-content-soft hover:fill-content-hover transition-all;}
 .follow-me [data-tooltip="LinkedIn"]:hover svg {@apply fill-[#0077b5];}
@@ -177,17 +183,17 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
 .tooltip:after {@apply content-[attr(data-tooltip)] whitespace-nowrap absolute left-1/2 -translate-x-1/2 bottom-full text-xs text-balance text-white px-2 py-1 rounded bg-neutral-hover mb-2 opacity-0 transition-all pointer-events-none;}
 .tooltip:hover:after {@apply opacity-100;}
 
-#hero {@apply overflow-hidden bg-gradient-primary;}
-#hero .container {@apply flex-col-reverse md:flex-row md:justify-between max-md:gap-12 pt-39;}
+#hero {@apply overflow-hidden pt-19 sm:pt-23 bg-gradient-primary;}
+#hero .container {@apply flex-col-reverse md:flex-row md:justify-between max-md:gap-12;}
 .hero-intro {@apply relative z-3 flex flex-col text-balance max-md:items-center gap-2;}
 .hero-intro > * {@apply w-fit;}
 .hero-intro em {@apply text-xl font-medium text-primary-base;}
 .hero-intro:hover em {@apply text-warning-soft transition-all;}
 .hero-intro em .icon-material {@apply animate-bounce transition-all;}
 .hero-intro:hover .icon-material {@apply scale-135;}
-.hero-intro h1 {@apply text-4xl 2xs:text-5xl lg:text-6xl leading-[1.2] md:whitespace-nowrap max-md:text-center text-gradient md:-ml-1;}
-.hero-intro h2 {@apply text-xl md:text-2xl md:whitespace-nowrap max-md:text-center text-shadow-md/60 text-shadow-white;}
-.hero-intro p {@apply text-lg max-md:text-center;}
+.hero-intro h1 {@apply text-2xl 2xs:text-3xl xs:text-4xl sm:text-5xl lg:text-6xl leading-[1.2] 2xs:whitespace-nowrap max-md:text-center text-gradient md:-ml-1;}
+.hero-intro h2 {@apply text-lg xs:text-xl md:text-2xl md:whitespace-nowrap max-md:text-center text-shadow-md/60 text-shadow-white;}
+.hero-intro p {@apply md:text-lg max-md:text-center;}
 .hero-intro .button-row {@apply pt-4;}
 .hero-intro .button {@apply w-35 grow;}
 .hero-present {@apply relative md:w-80 md:h-80;}
@@ -206,23 +212,31 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
 #about .container {@apply flex-col lg:flex-row-reverse xl:gap-16;}
 #about .heading {@apply flex-1 max-w-130 lg:text-left;}
 #about .heading h2 {@apply pb-4 lg:mx-0;}
+#about p {@apply text-balance;}
 #about p + p {@apply text-base pt-3;}
 .about-count {@apply flex max-xs:flex-col justify-center gap-4 sm:gap-8 max-xs:w-fit pt-6 max-xs:mx-auto;}
-.about-count .frame {@apply max-xs:flex-row flex-1 max-xs:items-center gap-2 max-xs:w-full p-4;}
+.about-count .frame {@apply max-xs:flex-row flex-1 max-lg:items-center gap-2 max-xs:w-full p-4;}
 .about-count h3 {@apply min-w-9.5 text-2xl leading-[0.8] text-right text-primary-soft;}
 .about-count .frame:hover h3 {@apply text-primary-base;}
-#about .about-count p {@apply text-base text-left;}
+#about .about-count p {@apply text-base;}
 .about-present {@apply flex-1 frame max-w-172 lg:max-w-120 p-2 hover:scale-none;}
 .about-present img {@apply object-cover aspect-video lg:aspect-3/4;}
 
-.work-list {@apply grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8;}
-.work-list > li {@apply frame relative p-2;}
-.work-details {@apply absolute left-0 bottom-0 flex flex-col gap-3 w-[calc(100%+2px)] p-4 border border-primary-disable rounded-2xl -m-px bg-white/95
-                                            opacity-0 translate-y-4 delay-75 duration-300 transition-all;}
-.work-list > li:hover .work-details {@apply opacity-100 translate-y-0;}
-.work-details h3 {@apply inline text-sm text-content-hover mr-1;}
-.work-details p  {@apply inline text-sm text-content-base;}
-.work-details ul {@apply flex flex-wrap gap-2;}
+.work-list {@apply grid md:grid-cols-2 lg:grid-cols-3 items-start gap-4 sm:gap-8;}
+.work-list > li {@apply frame relative gap-1 p-2;}
+.work-detail {@apply relative flex flex-col gap-2 w-full p-2;}
+.work-title {@apply leading-none line-clamp-4;}
+.work-title h3 {@apply inline text-sm text-content-hover mr-1;}
+.work-title p  {@apply inline text-sm text-content-base;}
+.work-link {@apply flex flex-wrap gap-2;}
+.work-skill {@apply absolute left-0 bottom-full flex flex-wrap gap-2 w-[calc(100%+18px)]
+                    p-4 border border-primary-disable rounded-2xl -m-2.25 bg-white/95
+                    shadow-[0_-2px_0_0_rgba(255,255,255,1)]
+                    opacity-0 delay-75 duration-300 transition-all;}
+.work-list > li:hover .work-skill {@apply opacity-100 -translate-y-3;}
+.work-skill:before {@apply content-["Tech_Stack"] absolute left-4 top-0 -translate-y-1/2 inline-flex items-center align-middle min-h-4
+                           text-[10px] leading-3.5 text-white px-1.5 rounded-sm bg-primary-soft
+                           shadow-[0_-1.5px_0_0_rgba(255,255,255,1)];}
 
 #skill {@apply inset-shadow-xs inset-shadow-white bg-gradient-primary;}
 #skill .frame {@apply md:flex-row gap-2 sm:gap-4 w-196 max-w-full;}
@@ -247,20 +261,20 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center min-[400p
                                   max-2xs:p-2 max-2xs:rounded-lg max-2xs:bg-neutral-lighter;}
 #experience li {@apply hover:text-content-hover transition-all;}
 
-#contact {@apply inset-shadow-xs inset-shadow-white bg-gradient-primary;}
+#contact {@apply pb-8 inset-shadow-xs inset-shadow-white bg-gradient-primary;}
 #contact .container {@apply md:flex-row-reverse flex-wrap md:items-start;}
 #contact .heading {@apply w-full;}
 #contact .heading em {@apply pl-1;}
 #contact .frame {@apply hover:scale-none;}
 #contactForm {@apply items-center grow md:w-1/2;}
-#contactForm button {@apply overflow-hidden sm:my-4;}
+#contactForm button {@apply overflow-hidden sm:mt-4;}
 #contactForm button span {@apply relative z-1;}
 #contactForm button:after {@apply absolute z-0 top-0 right-full content-[""] block w-full h-full rounded-lg bg-gradient
                                   opacity-100 delay-75 duration-600 transition-all;}
 #contactForm button:hover:after {@apply opacity-100 right-0;}
 #contactInformation {@apply max-md:items-center max-md:w-full;}
-#contactInformation hr {@apply w-[calc(100%+32px)] sm:w-[calc(100%+64px)] -ml-4 sm:-ml-8 sm:my-4;}
+#contactInformation hr {@apply w-[calc(100%+32px)] sm:w-[calc(100%+64px)] md:-ml-8 sm:my-4;}
 #contactProfile {@apply flex flex-col gap-2 max-md:items-center;}
+#contactProfile li.badge {@apply items-start gap-2 px-0 hover:bg-transparent;}
 #contactProfile li a:not(.button) {@apply block pl-0 pr-8 hover:px-4 py-2 rounded-lg hover:text-primary-hover hover:bg-primary-light/60 transition-all;}
-#contactProfile .badge {@apply px-0 hover:bg-transparent;}
 #contactProfile li a:not(.button):hover .badge {@apply text-primary-hover px-2 bg-white;}

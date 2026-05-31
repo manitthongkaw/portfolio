@@ -18,9 +18,8 @@ export default function Header() {
             <li><a href="#skill" onClick={handleNavMainClose}>Skill</a></li>
             <li><a href="#experience" onClick={handleNavMainClose}>Experience</a></li>
             <li><a href="#contact" onClick={handleNavMainClose}>Contact</a></li>
-            <li><a href="https://drive.google.com/file/d/1Y_ysPl9JTJ4lE0KR2dWP5pv_D7KktHo7/view?usp=drive_link" target="_blank" onClick={handleNavMainClose}>
-              <span className="icon-material mr-1">file_save</span>
-              CV</a></li>
+            <li><a href="https://drive.google.com/file/d/1Y_ysPl9JTJ4lE0KR2dWP5pv_D7KktHo7/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <span className="icon-material">file_save</span> CV</a></li>
           </ul>
         </nav>
       </div>

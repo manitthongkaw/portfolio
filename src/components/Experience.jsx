@@ -2,7 +2,7 @@ import { experiences } from "../data/experiences";
 
 export default function Experience() {
 
-  const latestExperiences = [...experiences].sort((a, b) => new Number(b.id.split("-")[1]) - new Number(a.id.split("-")[1]));
+  const latestExperiences = [...experiences].sort((a, b) => Number(b.id) - Number(a.id));
 
   return (
     <section id="experience">

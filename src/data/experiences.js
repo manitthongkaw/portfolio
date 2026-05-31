@@ -1,6 +1,6 @@
 export const experiences = [
   {
-    id: "experience-01",
+    id: 1,
     isOpen: false,
     label: "",
     company: "Huakati Remix Design",
@@ -13,7 +13,7 @@ export const experiences = [
     ]
   },
   {
-    id: "experience-02",
+    id: 2,
     isOpen: false,
     label: "",
     company: "Flying Fish Co., Ltd.",
@@ -27,7 +27,7 @@ export const experiences = [
     ]
   },
   {
-    id: "experience-03",
+    id: 3,
     isOpen: false,
     label: "",
     company: "Graphic Buffet Co., Ltd.",
@@ -41,7 +41,7 @@ export const experiences = [
     ]
   },
   {
-    id: "experience-04",
+    id: 4,
     status: "close",
     label: "",
     company: "Moreton Bay Co., Ltd.",
@@ -55,7 +55,7 @@ export const experiences = [
     ]
   },
   {
-    id: "experience-05",
+    id: 5,
     isOpen: true,
     label: "",
     company: "Freelance",
@@ -69,7 +69,7 @@ export const experiences = [
     ]
   },
   {
-    id: "experience-06",
+    id: 6,
     isOpen: true,
     label: "Rewrite my future.",
     company: "Generation Thailand",

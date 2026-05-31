@@ -1,4 +1,24 @@
+import { useState } from "react";
+
+import { works } from "../data/works";
+
 export default function Work() {
+
+  const isPrimaryLink = (type) => ["Website", "Vercel", "Render"].includes(type);
+  const getLinkLabel = (type) => {
+    switch (type) {
+      case "Website": return "View Project";
+      case "Vercel": return "Live Demo";
+      case "Render": return "Live Server";
+      default: return type;
+    }
+  };
+
+  const ITEM_PER_LOAD = 6;
+
+  const [visibleCount, setVisibleCount] = useState(ITEM_PER_LOAD);
+  const handleShowMore = () => setVisibleCount(visibleCount + ITEM_PER_LOAD);
+  const latestWorks = [...works].sort((a, b) => Number(b.id) - Number(a.id));
 
   return (
     <section id="work">
@@ -8,111 +28,42 @@ export default function Work() {
           <p>Selected projects — from concept to shipped product.</p>
         </div>
         <ul className="work-list">
-          <li>
-            <img src="/images/work/business-html-feature.jpg" />
-            <div className="work-details">
-              <div className="title">
-                <h3>Business with HTML5, Tailwind CSS and responsive design:</h3>
-                <p>Created drinks and illustrations images by AI-generated</p>
-              </div>
-              <ul>
-                <li><a className="badge" href="https://jsd12-manit-business-html.vercel.app/" target="_blank">Vercel <span className="icon-material">arrow_outward</span></a></li>
-                <li className="badge badge-soft badge-content">HTML5</li>
-                <li className="badge badge-soft badge-content">Tailwind CSS</li>
-                <li className="badge badge-soft badge-content">Responsive Design</li>
-                <li className="badge badge-soft badge-content">Gemini</li>
-                <li className="badge badge-soft badge-content">On-Page SEO</li>
-                <li><a className="badge badge-soft" href="https://pagespeed.web.dev/analysis?url=https://jsd12-manit-business-html.vercel.app/" target="_blank">PageSpeed <span className="icon-material">arrow_outward</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <img src="/images/work/business-html-feature.jpg" />
-            <div className="work-details">
-              <div className="title">
-                <p>Business with HTML5, Tailwind CSS and responsive design: Created drinks and illustrations images by AI-generated</p>
-              </div>
-              <ul>
-                <li><a className="badge" href="https://jsd12-manit-business-html.vercel.app/" target="_blank">Vercel <span className="icon-material">arrow_outward</span></a></li>
-                <li className="badge badge-soft badge-content">HTML5</li>
-                <li className="badge badge-soft badge-content">Tailwind CSS</li>
-                <li className="badge badge-soft badge-content">Responsive Design</li>
-                <li className="badge badge-soft badge-content">Gemini</li>
-                <li className="badge badge-soft badge-content">On-Page SEO</li>
-                <li><a className="badge badge-soft" href="https://pagespeed.web.dev/analysis?url=https://jsd12-manit-business-html.vercel.app/" target="_blank">PageSpeed <span className="icon-material">arrow_outward</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <img src="/images/work/business-html-feature.jpg" />
-            <div className="work-details">
-              <div className="title">
-                <p>Business with HTML5, Tailwind CSS and responsive design: Created drinks and illustrations images by AI-generated</p>
-              </div>
-              <ul>
-                <li><a className="badge" href="https://jsd12-manit-business-html.vercel.app/" target="_blank">Vercel <span className="icon-material">arrow_outward</span></a></li>
-                <li className="badge badge-soft badge-content">HTML5</li>
-                <li className="badge badge-soft badge-content">Tailwind CSS</li>
-                <li className="badge badge-soft badge-content">Responsive Design</li>
-                <li className="badge badge-soft badge-content">Gemini</li>
-                <li className="badge badge-soft badge-content">On-Page SEO</li>
-                <li><a className="badge badge-soft" href="https://pagespeed.web.dev/analysis?url=https://jsd12-manit-business-html.vercel.app/" target="_blank">PageSpeed <span className="icon-material">arrow_outward</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <img src="/images/work/business-html-feature.jpg" />
-            <div className="work-details">
-              <div className="title">
-                <h3>Business with HTML5, Tailwind CSS and responsive design:</h3>
-                <p>Created drinks and illustrations images by AI-generated</p>
-              </div>
-              <ul>
-                <li><a className="badge" href="https://jsd12-manit-business-html.vercel.app/" target="_blank">Vercel <span className="icon-material">arrow_outward</span></a></li>
-                <li className="badge badge-soft badge-content">HTML5</li>
-                <li className="badge badge-soft badge-content">Tailwind CSS</li>
-                <li className="badge badge-soft badge-content">Responsive Design</li>
-                <li className="badge badge-soft badge-content">Gemini</li>
-                <li className="badge badge-soft badge-content">On-Page SEO</li>
-                <li><a className="badge badge-soft" href="https://pagespeed.web.dev/analysis?url=https://jsd12-manit-business-html.vercel.app/" target="_blank">PageSpeed <span className="icon-material">arrow_outward</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <img src="/images/work/business-html-feature.jpg" />
-            <div className="work-details">
-              <div className="title">
-                <p>Business with HTML5, Tailwind CSS and responsive design: Created drinks and illustrations images by AI-generated</p>
-              </div>
-              <ul>
-                <li><a className="badge" href="https://jsd12-manit-business-html.vercel.app/" target="_blank">Vercel <span className="icon-material">arrow_outward</span></a></li>
-                <li className="badge badge-soft badge-content">HTML5</li>
-                <li className="badge badge-soft badge-content">Tailwind CSS</li>
-                <li className="badge badge-soft badge-content">Responsive Design</li>
-                <li className="badge badge-soft badge-content">Gemini</li>
-                <li className="badge badge-soft badge-content">On-Page SEO</li>
-                <li><a className="badge badge-soft" href="https://pagespeed.web.dev/analysis?url=https://jsd12-manit-business-html.vercel.app/" target="_blank">PageSpeed <span className="icon-material">arrow_outward</span></a></li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <img src="/images/work/business-html-feature.jpg" />
-            <div className="work-details">
-              <div className="title">
-                <p>Business with HTML5, Tailwind CSS and responsive design: Created drinks and illustrations images by AI-generated</p>
-              </div>
-              <ul>
-                <li><a className="badge" href="https://jsd12-manit-business-html.vercel.app/" target="_blank">Vercel <span className="icon-material">arrow_outward</span></a></li>
-                <li className="badge badge-soft badge-content">HTML5</li>
-                <li className="badge badge-soft badge-content">Tailwind CSS</li>
-                <li className="badge badge-soft badge-content">Responsive Design</li>
-                <li className="badge badge-soft badge-content">Gemini</li>
-                <li className="badge badge-soft badge-content">On-Page SEO</li>
-                <li><a className="badge badge-soft" href="https://pagespeed.web.dev/analysis?url=https://jsd12-manit-business-html.vercel.app/" target="_blank">PageSpeed <span className="icon-material">arrow_outward</span></a></li>
-              </ul>
-            </div>
-          </li>
+          {latestWorks?.length > 0 &&
+            latestWorks.slice(0, visibleCount).map((work) => (
+              <li key={work.id}>
+                <img src={work.image} alt={work.title} />
+                <div className="work-detail">
+                  <div className="work-title">
+                    <h3>{work.title}</h3>
+                    <p>{work.description}</p>
+                  </div>
+                  {Object.keys(work.links || {}).length > 0 && (
+                    <ul className="work-link">
+                      {Object.entries(work.links).map(([type, url]) => (
+                        <li key={type}>
+                          <a className={`badge ${isPrimaryLink(type) ? "" : "badge-soft"}`} href={url} target="_blank" rel="noopener noreferrer">
+                            {getLinkLabel(type)}
+                            {isPrimaryLink(type) && <span className="icon-material">arrow_outward</span>}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {work.skills?.length > 0 && (
+                    <ul className="work-skill">
+                      {work.skills.map((skill) => (
+                        <li key={skill} className="badge badge-soft badge-content">{skill}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            ))
+          }
         </ul>
+        {visibleCount < works.length && (
+          <button className="button button-soft button-content" onClick={handleShowMore}>Show More</button>
+        )}
       </div>
     </section>
   );
