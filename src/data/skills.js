@@ -15,12 +15,11 @@ export const skills = [
       { name: "Express.js", highlight: true },
       { name: "MongoDB", highlight: true },
       { name: "PostgreSQL" },
-      { name: "REST API" },
-      { name: "JWT Auth" },
+      { name: "RESTful API" },
       { name: "Git" },
       { name: "GitHub" },
-      { name: "jQuery" },
-      { name: "WordPress" }
+      { name: "WordPress" },
+      { name: "jQuery" }
     ]
   },
   {
