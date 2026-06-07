@@ -10,15 +10,19 @@ export default function Work() {
       case "Website": return "View Project";
       case "Vercel": return "Live Demo";
       case "Render": return "Live Server";
+      case "Figma": return "View Design";
       default: return type;
-    }
+    };
   };
 
-  const ITEM_PER_LOAD = 6;
+  const itemPerLoad = Number(import.meta.env.VITE_ITEM_PER_PAGE) || 6;
 
-  const [visibleCount, setVisibleCount] = useState(ITEM_PER_LOAD);
-  const handleShowMore = () => setVisibleCount(visibleCount + ITEM_PER_LOAD);
-  const latestWorks = [...works].sort((a, b) => Number(b.id) - Number(a.id));
+  const [visibleCount, setVisibleCount] = useState(itemPerLoad);
+  const handleShowMore = () => setVisibleCount(visibleCount + itemPerLoad);
+
+  const latestWorks = works
+    .map((work, index) => ({ ...work, originalIndex: index }))
+    .sort((a, b) => b.originalIndex - a.originalIndex);
 
   return (
     <section id="work">
@@ -30,11 +34,11 @@ export default function Work() {
         <ul className="work-list">
           {latestWorks?.length > 0 &&
             latestWorks.slice(0, visibleCount).map((work) => (
-              <li key={work.id}>
+              <li key={`work-${work.originalIndex}-${work.title}`}>
                 <img src={work.image} alt={work.title} />
                 <div className="work-detail">
                   <div className="work-title">
-                    <h3>{work.title}</h3>
+                    <h3>{work.title} </h3>
                     <p>{work.description}</p>
                   </div>
                   {Object.keys(work.links || {}).length > 0 && (

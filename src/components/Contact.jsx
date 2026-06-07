@@ -3,6 +3,8 @@ import Icon from "../utils/Icon";
 
 export default function Contact() {
 
+  const cvLink = import.meta.env.VITE_CV_LINK;
+
   const contactInitial = {
     name: "",
     email: "",
@@ -62,7 +64,7 @@ export default function Contact() {
             <li className="badge badge-ghost badge-content text-sm font-medium">
               <span className="icon-material">location_on</span> Location: Thailand
             </li>
-            <li><a className="button button-soft button-primary w-full text-sm font-medium mt-4" href="https://drive.google.com/file/d/1Y_ysPl9JTJ4lE0KR2dWP5pv_D7KktHo7/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <li><a className="button button-soft button-primary w-full text-sm font-medium mt-4" href={cvLink} target="_blank" rel="noopener noreferrer">
               <span className="icon-material">file_save</span> Download CV</a></li>
           </ul>
           <hr />

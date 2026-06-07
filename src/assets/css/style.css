@@ -207,13 +207,15 @@ footer .container {@apply flex-col min-[400px]:flex-row justify-center gap-2 min
 #about .container {@apply flex-col lg:flex-row-reverse xl:gap-16;}
 #about .heading {@apply flex-1 max-w-130 lg:text-left;}
 #about .heading h2 {@apply pb-4 lg:mx-0;}
-#about p {@apply text-balance;}
+#about p {@apply max-[520px]:text-pretty;}
 #about p + p {@apply text-base pt-3;}
+/*
 .about-count {@apply flex max-xs:flex-col justify-center gap-4 sm:gap-8 max-xs:w-fit pt-6 max-xs:mx-auto;}
 .about-count .frame {@apply max-xs:flex-row flex-1 max-lg:items-center gap-2 max-xs:w-full p-4;}
 .about-count h3 {@apply min-w-9.5 text-2xl leading-[0.8] text-right text-primary-soft;}
 .about-count .frame:hover h3 {@apply text-primary-base;}
 #about .about-count p {@apply text-base;}
+*/
 .about-present {@apply flex-1 frame max-w-172 lg:max-w-120 p-2 hover:scale-none;}
 .about-present img {@apply object-cover aspect-video lg:aspect-3/4;}
 
